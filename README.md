@@ -17,7 +17,4 @@ A native mobile / web app for der wahre walter by urs hostettler.
 - https://flutter.dev/docs/get-started/web
 
 ### Backend / Server:
-- https://github.com/yissachar/awesome-dart#server-frameworks
-
-
-- cool name: https://github.com/Jaguar-dart/jaguar
+let's not use dart after all...
