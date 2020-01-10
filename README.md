@@ -2,21 +2,21 @@
 A native mobile / web app for der wahre walter by urs hostettler.
 
 # Resources:
-## der wahre walter
+### der wahre walter
 - https://urs.fatamorgana.ch/wahre.html
-## Dart in general:
+### Dart in general:
 - https://github.com/yissachar/awesome-dart
 
-## Frontend / Client:
+### Frontend / Client:
 - https://github.com/yissachar/awesome-dart#client-web-app-frameworks
-### setup
+#### setup
 - https://flutter.dev/docs/get-started/test-drive?tab=vscode#create-app
-### mobile app
+#### mobile app
 - https://flutter.dev/docs/get-started/codelab
-### web app
+#### web app
 - https://flutter.dev/docs/get-started/web
 
-## Backend / Server:
+### Backend / Server:
 - https://github.com/yissachar/awesome-dart#server-frameworks
 
 
