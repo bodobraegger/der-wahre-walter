@@ -6,8 +6,8 @@ A native mobile / web app for der wahre walter by urs hostettler.
   - https://urs.fatamorgana.ch/wahre.html
 
 - Frontend / Client:
+  - https://github.com/yissachar/awesome-dart#client-web-app-frameworks
   - flutter:
-    - https://github.com/yissachar/awesome-dart#client-web-app-frameworks
     - setup
       - https://flutter.dev/docs/get-started/test-drive?tab=vscode#create-app
     - mobile app
