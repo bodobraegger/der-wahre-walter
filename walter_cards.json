@@ -1,0 +1,233 @@
+{
+    "cards": {
+        "85": {
+            "1": "Wenn du Raubkatzen fürchtest, so nähere dich nie einer Frau WALTER.", 
+            "2": "Wenn meine Geliebte traurige Geschichten hören möchte, so erzähle ich ihr von der Zeit, als ich WALTERTE.", 
+            "3": "Elektrische Installationen im Haushalt sind für Frauen WALTER.",
+            "flip": "7",
+            "gender": "M"
+        },
+        "7": {
+            "1": "WALTER ist eine Schriftstellerin, die ich männlichen Koryphäen wie Goethe und Schiller bei weitem vorziehe.", 
+            "2": "Bevor ich mit einem Mann zusammenziehe, muss ich unbedingt sein(e/n) WALTER kennen.", 
+            "3": "Wenn ich überraschend zur ersten Päpstin erkoren würde, nähme ich den vielsagenden Namen WALTER die Erste an.",
+            "flip": "85",
+            "gender": "F"
+        },
+        "61": {
+            "1": "Wenn mein Nachbar/meine Nachbarin zur Rechten ein Haushaltsgerät wäre, sähe ich ihn/sie als WALTER.", 
+            "2": "Manchmal verspüre ich den seltsamen Drang, WALTER zu WALTERN.", 
+            "3": "Hier ist ein Gedicht an meineN LiebsteN: \"Rosen sind rot, Veilchen sind blau, Zucker ist süss, WALTER\".",
+            "flip": "139"
+        },
+        "139": {
+            "1": "Im häuslichen Zusammenleben muss man wohl über viele Kleinigkeiten hinwegsehen. Doch eine Wohnpartnerin, die jede Woche WALTERT, hielte ich auf die Dauer nicht aus.", 
+            "2": "Ich möchte mal irgendwo leben, wo es kein(e/n) WALTER gibt.", 
+            "3": "Ich bin eigentlich kein Sammlertyp - aber meine alten WALTER kann ich nicht wegwerfen.",
+            "flip": "61"
+        },
+        "76": {
+            "1": "Eine Sache, die Frauen fasziniert, Männer aber langweilt, ist WALTER.", 
+            "2": "Das waren noch Zeiten! Meine Eltern lernten sich WALTER kennen.", 
+            "3": "Ein gentechnologisches Horrorszenario: Stell dir vor, sie kreuzen WALTER mit WALTER und das Wesen entweicht aus dem Laboratorium!",
+            "flip": "154"
+        },
+        "154": {
+            "1": "Ich könnte mir vorstellen, dass ich eines Tages Jagd auf Walter mache.", 
+            "2": "Ich unterschreibe meine Briefe nicht mit \"Gruss und Kuss\", ich unterschreibe sie \"WALTER und WALTER\"!", 
+            "3": "Wenn ich vor einem Hinrichtungskommando stünde und gefragt würde, ob ich noch einen letzten Wunsch habe, antworte ich \"WALTER\".",
+            "flip": "76"
+        },
+        "70": {
+            "1": "Wenn es eine Impfung gegen WALTER gäbe, würde ich eine Volksimpfung in grossem Stil befürworten.", 
+            "2": "Das Peinlichste, was du einen Mann vor seinen Kollegen fragen kannst, ist \"WALTER?\".", 
+            "3": "Unter keinen Umständen würde ich mich zusammen mit WALTER fotografieren lassen.",
+            "flip": "148"
+        },
+        "148": {
+            "1": "Wenn du WALTER nicht magst, so komm mich ja nie besuchen.", 
+            "2": "Mein Motto ist: Wenn was schiefgeht, so lies die Gebrauchsanweisung. Wenn's auch dann noch nicht klappt, so WALTER.", 
+            "3": "Ich wünschte, ich könnte mein Gehirn für einen Monat gegen dasjenige von WALTER eintauschen.",
+            "flip": "70"
+        },
+        "34": {
+            "1": "Wenn ich unter verschiedenen Angeboten als SpitzenmanagerIn der Wirtschaft auswählen könnte, übernähme ich die Firma WALTER.", 
+            "2": "Ich glaube, ich bin ein wenig seltsam. Als Kind schaute ich mir am Fernsehen immer am liebsten WALTER an.", 
+            "3": "Ein guter Rat: Küss nie ein(e/n) WALTER!",
+            "flip": "112"
+        },
+        "112": {
+            "1": "Ich begehe nie den gleichen Fehler zweimal. Deshalb versuche ich auch nie wieder, WALTER zu WALTERN.", 
+            "2": "Die beste Nachricht, die in letzter Zeit von den Medien verbreitet wurde, war WALTER.", 
+            "3": "Ich weiss nicht, was ich von Wiedergeburt und früheren Inkarnationen halten soll. Eins ist mir aber klar: Wenn ich mal ein Vogel war, war ich bestimmt kein(e) WALTER.",
+            "flip": "34"
+        },
+        "267": {
+            "1": "Ich habe zwar nie eine Schauspielschule besucht - aber die Vertretung von WALTER in ihrem/seinem neuesten Film würde ich mir durchaus zutrauen.", 
+            "2": "Wofür ich zum letzten Mal Geld gespendet habe? Klar, das war für WALTER.", 
+            "3": "Ein heisser Tip für alle Frauen: Der Geruch von WALTER macht Männer wild.",
+            "flip": "189"
+        },
+        "189": {
+            "1": "Es gibt da eine biblische Gestalt, in der ich viele Züge meiner selbst wiedererkenne, nämlich WALTER.", 
+            "2": "Geben ist seliger denn Nehmen - besonders bei WALTER.", 
+            "3": "Ein Rat fürs Leben: Lass dich nie auf eine Beziehung mit WALTER ein!",
+            "flip": "267"
+        },
+        "96": {
+            "1": "\"WALTER\" wäre eine Nachricht, die mich vielleicht veranlassen könnte, morgen nach Mailand zu fliegen.", 
+            "2": "Wenn ich WALTER lese, werde ich immer ganz melancholisch.", 
+            "3": "Überharte Fussballspieler werden \"Aufräumer vom Dienst\" oder \"Eisenfuss\" genannt - für den fairsten Spieler schlage ich den ehrenvollen Titel \"WALTER\" vor.",
+            "flip": "18"
+        },
+        "18": {
+            "1": "Ich bin stolz darauf, sagen zu können, dass ich noch nie bei WALTER Zuflucht suchte.", 
+            "2": "Grün/Gelb/rot sind die Farben WALTER.", 
+            "3": "Wenn ich mal bei einem Eidgenössischen (D: gesamtdeutschen) Turnfest mitmache, so vermutlich als WALTER.",
+            "flip": "96"
+        },
+        "63": {
+            "1": "Ich wünschte mir eine Demo, bei der 10'000 Menschen schreien: \"WALTER\"!", 
+            "2": "Niemals würde ich meine Seele dem Teufel vekaufen, na ja, vielleicht, wenn er dafür WALTER.", 
+            "3": "Ich glaube, beim WALTERN wäre ich meinem Nachbarn/meiner Nachbarin zur Rechten etwa ebenbürtig.",
+            "flip": "141"
+        },
+        "141": {
+            "1": "Die nächste Pandemie-Panik wird wegen des WALTER-Virus ausbrechen.", 
+            "2": "Das am schwierigsten asuzusprechende Wort der deutschen Sprache ist \"WALTER\".", 
+            "3": "Ich könne auf die Dauer nicht in einem Hotel leben. Mir ginge WALTER auf die Nerven.",
+            "flip": "63"
+        },
+        "269": {
+            "1": "Ich frage mich immer, wo WALTER überwintert.", 
+            "2": "Der Wolf in \"Rotkäppchen\" lässt sich psychoanalytisch als WALTER deuten, die Grossmutter als WALTER.", 
+            "3": "Ich würde mich nie und nimmer auf eine Romanze mit einem/einer WALTER einlassen.",
+            "flip": "191"
+        },
+        "191": {
+            "1": "Wäre mein Liebesleben ein Fahrzeug, so wär's WALTER.", 
+            "2": "Wenn ich einem lieben Menschen meine Zuneigung durch eine ganz aussergewöhnliche Mutprobe beweisen müsste, würde ich WALTER.", 
+            "3": "Wenn ich mal einen neuen Schimmelkäse erfinde, werde ich ihn frei nach mir \"WALTER\" benennen.",
+            "flip": "269"
+        },
+        "183": {
+            "1": "Nachts um 2 blieb ich auf einer abgelegenen Landstrasse stehen. Allein im Wagen, ohne Benzin. Ich behielt den klaren Kopf und WALTER.", 
+            "2": "Der teuerste je an einer Auktion versteigerte Gegenstand war WALTER.", 
+            "3": "Ich werde oft falsch eingeschätzt. Ich habe die Kraft einer/eines WALTER und die Klugheit einer/eines WALTER.",
+            "flip": "261"
+        },
+        "290": {
+            "1": "Ich glaube, die Demonstration, die heutzutage am allermeisten Leute auf die Strasse brächte, wäre eine Demo WALTER.", 
+            "2": "Ich habe vor, mich beim Fernsehen für die \"Wetten dass?\"-Sendung anzumelden. Ich wette, dass ich WALTERN kann.", 
+            "3": "Wenn ich einen Liebestrank braue, ist WALTER die wesentlichste Zutat.",
+            "flip": "212"
+        },
+        "212": {
+            "1": "Manche 15jährigen sind in ihre(n) LehrerIn verknallt - ich war verknallt in WALTER.", 
+            "2": "In den meisten Büros ist es heute erlaubt, WALTER zu WALTERN - was vor 50 Jahren noch undenkbar gewesen wäre.", 
+            "3": "Ich habe noch in keiner Bibliothek ein Buch über WALTER gefunden.",
+            "flip": "290"
+        },
+        "305": {
+            "1": "Viele Arbeitslose sind WALTER.", 
+            "2": "Wenn ich das Wort \"Tempo\" höre, denke ich unwillkürlich an WALTER.", 
+            "3": "Mir schwebt ein noch nie gesehener technischer Gag für den nächsten James Bond-Film vor: 007 Walter.",
+            "flip": "227"
+        },
+        "227": {
+            "1": "Ich halte nichts von auffälligem Make-Up - aber wenn schon, dann würde ich meine Fingernägel WALTER bemalen.", 
+            "2": "Die unangenehmste Pflicht einer Kinderkrankenschwester ist gewiss das WALTERN.", 
+            "3": "Ich habe die Idee zu einem Bestseller-Roman: \"Liebe auf Abwegen - die Geschichte eines Mannes und WALTER\".",
+            "flip": "305"
+        },
+        "69": {
+            "1": "Ich bin allergisch auf WALTER.", 
+            "2": "Wenn ich graue Regenschirme bewerben müsste, wäre WALTER mein Traum-Model.", 
+            "3": "Ich denke daran, ein Bekannschaftsinserat aufzugeben. Angesichts ihres Zielpublikums scheint mir dafür eine bestimmte Zeitschrift besonders geeignet: WALTER.",
+            "flip": "147"
+        },
+        "147": {
+            "1": "Ich hätte Lust, mit einiger Verspätung doch noch eine Handwerkerlehre anzufangen, und zwar als WALTER-lehrling.", 
+            "2": "Der Büstenhalter wurde durch reinen Zufall erfunden. Der Erfinder tüftelte eigentlich am WALTER herum.", 
+            "3": "Es gibt Leute, die wünschen sich in den Ferien nur Ruhe und Frieden. Ich wünsche mir WALTER und WALTER.",
+            "flip": "69"
+        },
+        "222": {
+            "1": "Eine fliegende Untertasse, etwa so gross wie ein Apfelkuchen, landet in meinem Garten. Eine Luke öffnet sich und ich erblicke WALTER.", 
+            "2": "Wenn ich eine militärische Anlage auskundschaften sollte, würde ich mir als WALTER getarnt Zutritt verschaffen.", 
+            "3": "Nein, Morgenstund' hat kein Gold im Mund. Aber WALTER hat Gold im Mund.",
+            "flip": "300"
+        },
+        "300": {
+            "1": "Nach jüdisch-orthodoxem Brauch gebührt es sich, morgens beim WALTERN zu WALTERN.", 
+            "2": "Hier eine klassische Wissensfrage, die in dieser Runde nur ich allein beantworten kann: \"WALTER?\"", 
+            "3": "Bei Kaninchenzucht-Wettbewerben wird ausser der Länge der Ohren hauptsächlich WALTER bewertet.",
+            "flip": "222"
+        },
+        "303": {
+            "1": "Meine historischen Worte, wenn ich als erster Astronaut / erste Astronautin den Planeten Saturn betrete: \"WALTER\".", 
+            "2": "Ergänze diese Reihe logisch: Eisenhauer, Schwarzkopf WALTER.", 
+            "3": "Ich habe die Bibel, Darwin, von Däniken und manches andere gelesen. Ich kam zur Auffassung, die Menschheit habe ihren Ursprung in/im WALTER.",
+            "flip": "225"
+        },
+        "225": {
+            "1": "Ich würde sagen: Ein selbstverwalteter Betrieb ist ein Betrieb, in dem WALTER", 
+            "2": "Ich könnte euch alle mit einer Darbietung überraschen, die ihr mir bestimmt icht zutraut - ich könnte WALTERN.", 
+            "3": "Wenn ich mal ein neues Yoghurt-Aroma kreiere,  werde ich es \"WALTER\" taufen.",
+            "flip": "303"
+        },
+        "259": {
+            "1": "Ich kenne einen Mann, der ist so jähzornig, dass er manchmal auch WALTER anschreit ", 
+            "2": "Die letzten Worte eines Menschen sind die bleibenden. So habe ich mir schon beizeiten überlegt, was ich sagen werde: \"WALTER\".", 
+            "3": "Das härteste an einem Chefposten ist bestimmt WALTER.",
+            "flip": "181"
+        },
+        "181": {
+            "1": "Ein Wappen, das unserer Familie wirklich entspricht, müsste WALTER zeigen.", 
+            "2": "Ich denke, wenn ich mal pensioniert werde und viel freie Zeit habe, werde ich WALTER züchten.", 
+            "3": "Vielleicht bin ich voreingenommen... aber ich glaube, Frauen sind besonders gute WALTER-Lehrerinnen .",
+            "flip": "259"
+        },
+        "90": {
+            "1": "Nein! Nicht der Geruch von Pulver, sondern der Geruch von WALTER erinnert mich ans Militär. ", 
+            "2": "Für WALTER würde ich mich in den Kampf stürzen, - euch aber liesse dies gleichgültig.", 
+            "3": "Die schönsten Frauen der Welt fand ich WALTER.",
+            "flip": "12",
+            "gender": "M"
+        },
+        "12": {
+            "1": "Viele Männer reden ihre Geliebten mit \"Mäuschen\" oder \"Spätchen\" an. Ich finde das beleidigend. Wenn schon, so möchte ich bitteschön mit \"WALTERchen\" angeredet werden!", 
+            "2": "Im Frauenhaus erregst du grosses Ärgernis, wenn du WALTERST.", 
+            "3": "Ich erwähne meinem Partner gegenüber nie WALTER. Da ist er sehr empfindlich.",
+            "flip": "90",
+            "gender": "F"
+        },
+        "81": {
+            "1": "Ich habe noch nie eine Frau getroffen, die mir beim WALTERN das Wasser reichen konnte.", 
+            "2": "Zwischen Donald Duck und mir gibt es einen wesentlichen Unterschied: WALTER.", 
+            "3": "Wenn ich ein Höhlenbewohner wäre, brächte ich meiner liebsten Höhlenbewohnerin ein(e/n) WALTER nach Hause.",
+            "flip": "3",
+            "gender": "M"
+        },
+        "3": {
+            "1": "Ich bin in einer schaurigen Regennacht ohne Schirm und Mantel unterwegs. Ein Auto stoppt, und ein unbekannter Mann lädt mich ein, mitzufahren. - Selbstverständlich steige ich nur ein, wenn WALTER.", 
+            "2": "Die Überlegenheit der weiblichen Intelligenz zeigt sich am deutlichsten beim WALTERN.", 
+            "3": "Nie im Leben würde ich ein(e/n) WALTER stricken.",
+            "flip": "81",
+            "gender": "F"
+        },
+        "128": {
+            "1": "Frauen sollten nicht Militärdienst leisten müssen, weil Frauen WALTER.", 
+            "2": "WALTERN ist etwas, was ich ungern sehe, aber selber gerne tu.", 
+            "3": "(Zum Nachbarn/zur Nachbarin links:) Wage es nicht, mich zu beleidigen! Ich fordere dich zu einem WALTER-Duell, in dem du nicht die geringste Chance hast!)",
+            "flip": "50"
+        },
+        "50": {
+            "1": "Nie und nimmer würde ich mich hinten auf ein Tandem setzen, das WALTER steuert.", 
+            "2": "Öffentliche Ehrungen freuen mich immer wieder. Die Auszeichnung, die ich mir am sehnlichsten erwünsche, ist WALTER.", 
+            "3": "Leg dein Geld in WALTER an! Es wird immer Menschen geben, die solche Dinger kaufen.",
+            "flip": "128"
+        }
+
+    }
+}

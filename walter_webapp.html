@@ -1,0 +1,213 @@
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<head>
+
+<link rel="stylesheet" href="./bootstrap.css">
+
+</head>
+<body>
+<!-- 
+<p class="bold" id="spruch"> ich bin der wahre walter. </p>
+<button onclick="we_want_change()"> change something </button>
+--> 
+<div class="container">
+    <div class="row">
+        <div class="col">
+        <p></p>
+            <div  align="center">
+            <div class="card " align="left">
+                <div class="card-body">
+                    <!-- <h5 class="card-title">Card title</h5> -->
+                    <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+                    <p class="card-text" id="current_card">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            
+                    <button type="button" class="btn prev btn-dark" onclick = "load_card('prev')">Vorherige</button>
+                    <button type="button" class="btn flip btn-light" onclick ="flip_card()" disabled>Flip</button>
+                    <button type="button" class="btn next btn-secondary myFloat_Right" onclick="load_card('next')">Nächste</button>
+                    <!-- <a href="#" class="card-link">Another link</a> -->
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+<script>
+
+function setCookie(name,value,days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+}
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+function eraseCookie(name) {   
+    document.cookie = name+'=; Max-Age=-99999999;';  
+}
+
+</script>
+
+
+
+
+<script charset="utf-8">
+
+var request = new XMLHttpRequest();
+   request.open("GET", "./walter_cards.json", false);
+   request.send(null)
+   var json_data = JSON.parse(request.responseText);
+   // alert (my_JSON_object.result[0]);
+
+console.log(json_data);
+var cards = json_data["cards"];
+
+viewed_nrs = [];
+current_nr = -1;
+card_nrs = [];
+
+
+function LoadOrShuffle() {
+    hist = getCookie("history");
+    if(hist == null) {
+        card_nrs = [];
+        for(var k in cards) card_nrs.push(k);
+        shuffle(card_nrs);
+        viewed_nrs = [];
+        current_nr = -1;
+        setHistoryCookie();
+    }
+    else {
+        hist = JSON.parse(hist);
+        viewed_nrs = hist["viewed_nrs"];
+        current_nr = hist["current_nr"];
+        card_nrs = hist["card_nrs"];
+    }
+    console.log(viewed_nrs);
+    console.log(current_nr);
+    console.log(card_nrs);
+    load_card("current");
+}
+
+LoadOrShuffle();
+
+function setHistoryCookie() {
+    var history = {
+        "viewed_nrs": viewed_nrs,
+        "current_nr": current_nr,
+        "card_nrs": card_nrs
+    }
+    setCookie("history", JSON.stringify(history), 9999);
+}
+
+
+function load_card(card) {
+    if(card == 'next') {
+        if(card_nrs.length <= 0) {
+            alert("Der Fichen-Stapel ist leer. Mischelt ihn erneut und wählt die Aussagen die ihr noch nicht behandelt habt.");
+            return;
+        }
+        if(current_nr != -1) viewed_nrs.push(current_nr);
+        current_nr = card_nrs.pop();
+    }
+    else if(card == 'prev') {
+        if(viewed_nrs.length <= 0) {
+            alert("Es gibt noch keine abgelegten Fichen. Schaut die erste an mit dem 'Nächste' Knopf.");
+            return;
+        }
+        if(current_nr != -1) card_nrs.push(current_nr);
+        current_nr = viewed_nrs.pop();
+    }
+
+    render_card(current_nr);
+
+    console.log(viewed_nrs);
+    console.log(current_nr);
+    console.log(card_nrs);
+    setHistoryCookie();
+}
+
+function render_card(card_nr) {
+    var cc = document.getElementById("current_card");
+    cc.innerHTML = "";
+
+    if ("gender" in cards[card_nr]) {
+        cc.innerHTML += `<p class="bold" align="center">
+            - ${cards[card_nr]["gender"]} -\n
+        </p>
+        `;
+        prev_btn = document.getElementsByClassName("flip")[0];
+        prev_btn.disabled = false;
+    }
+
+    cc.innerHTML += `<ol>
+        <li> ${spanify_walter(cards[card_nr][1])} </li>
+        <li> ${spanify_walter(cards[card_nr][2])} </li>
+        <li> ${spanify_walter(cards[card_nr][3])} </li>
+    </ol>
+    `;
+}
+
+function flip_card() {
+    console.log(current_nr);
+    if(current_nr != -1 ) return; //|| !("gender" in cards[current_nr]) 
+    console.log(cards[current_nr]);
+    flipped_nr = cards[current_nr]["flip"];
+    // var cc = document.getElementById("current_card");
+    // cc.addClass("flipped");
+    render_card(flipped_nr);
+
+}
+
+
+function spanify_walter(string) {
+    var result = string.replace(/(WALTER[A-Z]*)/gi, function(match) { console.log(match); return `<span class="walter">${match}</span>`});
+    return result;
+}
+
+
+/**
+ * Shuffles array in place. ES6 version
+ * @param {Array} a items An array containing the items.
+ */
+function shuffle(a) {
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+}
+</script>
+
+
+
+
+
+<style>
+.walter {
+    background-color: #111;
+    color: #FFF;
+    text-transform: uppercase;
+}
+
+.myFloat_Right {
+    float: right;
+}
+.bold {
+    font-weight: bold;
+}
+</style>
