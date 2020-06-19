@@ -2,7 +2,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <head>
 
-<link rel="stylesheet" href="./bootstrap.css">
+<link rel="stylesheet" href="./bootstrappy_slim.css">
 
 </head>
 <body>
@@ -11,53 +11,57 @@
 <button onclick="we_want_change()"> change something </button>
 --> 
 <div class="container">
-    <div class="row">
-        <div class="col">
-        <p></p>
-            <div  align="center">
-            <div class="card " align="left">
-                <div class="card-body">
-                    <!-- <h5 class="card-title">Card title</h5> -->
-                    <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                    <p class="card-text" id="current_card">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            
-                    <button type="button" class="btn prev btn-dark" onclick = "load_card('prev')">Vorherige</button>
-                    <button type="button" class="btn flip btn-light" onclick ="flip_card()" disabled>Flip</button>
-                    <button type="button" class="btn next btn-secondary myFloat_Right" onclick="load_card('next')">Nächste</button>
-                    <!-- <a href="#" class="card-link">Another link</a> -->
-                </div>
-            </div>
-            </div>
+  <div class="row">
+    <div class="col">
+    <p></p>
+      <div class="text-center">
+      <div class="card text-left">
+        <div class="card-body"  style="padding-top:0rem;">
+          <div class="card-text" id="current_card"></div>
+          <div class="row" style="padding-top:3rem">
+          <div class="col">
+            <button type="button" class="btn prev" onclick = "LoadPrev()">Vorherige</button>
+          </div>
+          <div class="col text-center">
+            <button type="button" class="btn flip btn-light" onclick ="flip_card()" disabled>Flip</button>
+          </div>
+          <div class="col text-right">
+          <button type="button" class="btn next myFloat_Right" onclick="LoadNext()">Nächste</button>
+          </div>
+          </div>
         </div>
+      </div>
+      </div>
     </div>
+  </div>
 </div>
 </body>
 </html>
 
 
 <script>
-
+// helper scripts for cookies
 function setCookie(name,value,days) {
-    var expires = "";
-    if (days) {
-        var date = new Date();
-        date.setTime(date.getTime() + (days*24*60*60*1000));
-        expires = "; expires=" + date.toUTCString();
-    }
-    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+  var expires = "";
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime() + (days*24*60*60*1000));
+    expires = "; expires=" + date.toUTCString();
+  }
+  document.cookie = name + "=" + (value || "")  + expires + "; path=/;secure";
 }
 function getCookie(name) {
-    var nameEQ = name + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0;i < ca.length;i++) {
-        var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1,c.length);
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-    }
-    return null;
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+  for(var i=0;i < ca.length;i++) {
+    var c = ca[i];
+    while (c.charAt(0)==' ') c = c.substring(1,c.length);
+    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+  }
+  return null;
 }
 function eraseCookie(name) {   
-    document.cookie = name+'=; Max-Age=-99999999;';  
+  document.cookie = name+'=; Max-Age=-99999999;';  
 }
 
 </script>
@@ -66,117 +70,157 @@ function eraseCookie(name) {
 
 
 <script charset="utf-8">
-
+// loading in the cards
 var request = new XMLHttpRequest();
    request.open("GET", "./walter_cards.json", false);
    request.send(null)
    var json_data = JSON.parse(request.responseText);
-   // alert (my_JSON_object.result[0]);
 
-console.log(json_data);
+// console.log(json_data);
 var cards = json_data["cards"];
 
 viewed_nrs = [];
+prev_nr = -1;
 current_nr = -1;
 card_nrs = [];
 
-
+// initial shuffle of the cards or loading of the order in the cookie
 function LoadOrShuffle() {
-    hist = getCookie("history");
-    if(hist == null) {
-        card_nrs = [];
-        for(var k in cards) card_nrs.push(k);
-        shuffle(card_nrs);
-        viewed_nrs = [];
-        current_nr = -1;
-        setHistoryCookie();
-    }
-    else {
-        hist = JSON.parse(hist);
-        viewed_nrs = hist["viewed_nrs"];
-        current_nr = hist["current_nr"];
-        card_nrs = hist["card_nrs"];
-    }
-    console.log(viewed_nrs);
-    console.log(current_nr);
-    console.log(card_nrs);
-    load_card("current");
-}
-
-LoadOrShuffle();
-
-function setHistoryCookie() {
-    var history = {
-        "viewed_nrs": viewed_nrs,
-        "current_nr": current_nr,
-        "card_nrs": card_nrs
-    }
-    setCookie("history", JSON.stringify(history), 9999);
-}
-
-
-function load_card(card) {
-    if(card == 'next') {
-        if(card_nrs.length <= 0) {
-            alert("Der Fichen-Stapel ist leer. Mischelt ihn erneut und wählt die Aussagen die ihr noch nicht behandelt habt.");
-            return;
-        }
-        if(current_nr != -1) viewed_nrs.push(current_nr);
-        current_nr = card_nrs.pop();
-    }
-    else if(card == 'prev') {
-        if(viewed_nrs.length <= 0) {
-            alert("Es gibt noch keine abgelegten Fichen. Schaut die erste an mit dem 'Nächste' Knopf.");
-            return;
-        }
-        if(current_nr != -1) card_nrs.push(current_nr);
-        current_nr = viewed_nrs.pop();
-    }
-
-    render_card(current_nr);
-
-    console.log(viewed_nrs);
-    console.log(current_nr);
-    console.log(card_nrs);
+  hist = getCookie("history");
+  if(hist == null) {
+    // no cookie exists, so shuffle the card_nrs and reset the viewed_nrs, save this state
+    card_nrs = [];
+    for(var k in cards) card_nrs.push(k);
+    shuffle(card_nrs);
+    viewed_nrs = [];
+    current_nr = -1;
     setHistoryCookie();
+  }
+  else {
+    hist = JSON.parse(hist);
+    viewed_nrs = hist["viewed_nrs"];
+    current_nr = hist["current_nr"];
+    card_nrs   = hist["card_nrs"];
+  }
+  // console.log(viewed_nrs);
+  // console.log(current_nr);
+  // console.log(card_nrs);
+  if(current_nr == -1) LoadNext();
+  else render_card(current_nr);
 }
+
+LoadOrShuffle(); // call this on page load 
+
+// wrapper to save all necessary data to cookie
+function setHistoryCookie() {
+  var history = {
+    "viewed_nrs": viewed_nrs,
+    "current_nr": current_nr,
+    "card_nrs": card_nrs
+  }
+  setCookie("history", JSON.stringify(history), 9999);
+}
+
+
+function LoadPrev(card) {
+  prev_nr = current_nr;
+  
+  if(viewed_nrs.length <= 0) {
+    alert("Es gibt noch keine abgelegten Fichen.");
+    return;
+  }
+  if(current_nr != -1) card_nrs.push(current_nr);
+  current_nr = viewed_nrs.pop();
+  // skip duplicates
+  if (prev_nr == current_nr) current_nr = card_nrs.pop();
+  
+  render_card(current_nr);
+
+  // console.log(viewed_nrs);
+  // console.log(current_nr);
+  // console.log(card_nrs);
+  
+}
+
+function LoadNext() {
+  prev_nr = current_nr;
+
+  if(card_nrs.length <= 0) {
+    alert("Der Fichen-Stapel ist leer. Mischt ihn erneut und wählt die Aussagen die ihr noch nicht behandelt habt.");
+    return;
+  }
+  if(current_nr != -1) viewed_nrs.push(current_nr);
+  current_nr = card_nrs.pop();
+  // skip duplicates
+  if (prev_nr == current_nr) current_nr = card_nrs.pop();
+
+  render_card(current_nr);
+
+  // console.log(viewed_nrs);
+  // console.log(current_nr);
+  // console.log(card_nrs);
+
+}
+
+
 
 function render_card(card_nr) {
-    var cc = document.getElementById("current_card");
-    cc.innerHTML = "";
+  var cc = document.getElementById("current_card");
+  var flip_btn = document.getElementsByClassName("flip")[0];
+  
 
-    if ("gender" in cards[card_nr]) {
-        cc.innerHTML += `<p class="bold" align="center">
-            - ${cards[card_nr]["gender"]} -\n
-        </p>
-        `;
-        prev_btn = document.getElementsByClassName("flip")[0];
-        prev_btn.disabled = false;
-    }
-
-    cc.innerHTML += `<ol>
-        <li> ${spanify_walter(cards[card_nr][1])} </li>
-        <li> ${spanify_walter(cards[card_nr][2])} </li>
-        <li> ${spanify_walter(cards[card_nr][3])} </li>
-    </ol>
+  if ("gender" in cards[card_nr]) {
+    cc.innerHTML = `<p class="bold text-center" style="margin-bottom: 1rem;">
+      ${cards[card_nr]["gender"]}\n
+    </p>
     `;
+    flip_btn.disabled = false;
+  }
+  else  {
+    cc.innerHTML = `<p class="bold" align="center" style="padding-top: 1rem; style="margin-bottom: 1rem; visibility: hidden;"> \n</p>`;
+    flip_btn.disabled = true;
+  }
+
+  cc.innerHTML += `
+  <div class="card_nr text-right">${card_nr}</div>
+  <ol>
+    <li> ${spanify_walter(cards[card_nr][1])} </li>
+    <li> ${spanify_walter(cards[card_nr][2])} </li>
+    <li> ${spanify_walter(cards[card_nr][3])} </li>
+  </ol>
+  `;
+  setHistoryCookie();
 }
 
+
+// render the flipside of a gendered card
 function flip_card() {
-    console.log(current_nr);
-    if(current_nr != -1 ) return; //|| !("gender" in cards[current_nr]) 
-    console.log(cards[current_nr]);
-    flipped_nr = cards[current_nr]["flip"];
-    // var cc = document.getElementById("current_card");
-    // cc.addClass("flipped");
-    render_card(flipped_nr);
+  // not a gendered card, abort
+  if(current_nr == -1 || !("gender" in cards[current_nr]) ) return; 
+
+  prev_nr = current_nr;
+  // update current_nr to match flipside
+  current_nr = cards[current_nr]["flip"];
+  // only do the stuff below once
+  if(prev_nr != current_nr) {
+    // if flipside in the stapel, remove it from there
+    if(current_nr in card_nrs) {
+      card_nrs = card_nrs.filter(function(value, index, arr){ return value != current_nr;});
+    }
+    // if flipside not in viewed, add it to there
+    if(!(current_nr in viewed_nrs)) {
+      viewed_nrs.push(current_nr);
+    }
+  }
+
+  render_card(current_nr);
 
 }
 
 
 function spanify_walter(string) {
-    var result = string.replace(/(WALTER[A-Z]*)/gi, function(match) { console.log(match); return `<span class="walter">${match}</span>`});
-    return result;
+  var result = string.replace(/(WALTER[A-Z]*)/gi, function(match) { return `<span class="walter">${match}</span>`});
+  return result;
 }
 
 
@@ -185,11 +229,11 @@ function spanify_walter(string) {
  * @param {Array} a items An array containing the items.
  */
 function shuffle(a) {
-    for (let i = a.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [a[i], a[j]] = [a[j], a[i]];
-    }
-    return a;
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
 }
 </script>
 
@@ -198,16 +242,26 @@ function shuffle(a) {
 
 
 <style>
+
 .walter {
-    background-color: #111;
-    color: #FFF;
-    text-transform: uppercase;
+  background-color: #111;
+  color: #FFF;
+  text-transform: uppercase;
+}
+.card_nr {
+  font-size: 0.5em;
+  margin-right: -2rem;
 }
 
+body {
+  font-size: 3em;
+  font-family: serif;
+}
 .myFloat_Right {
-    float: right;
+  float: right;
 }
 .bold {
-    font-weight: bold;
+  font-weight: bold;
+
 }
 </style>
