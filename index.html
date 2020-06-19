@@ -23,7 +23,7 @@
             <button type="button" class="btn prev" onclick = "LoadPrev()">Vorherige</button>
           </div>
           <div class="col text-center">
-            <button type="button" class="btn flip btn-light" onclick ="flip_card()" disabled>Flip</button>
+            <button type="button" class="btn flip btn-light" onclick ="flip_card()" disabled style="display:none">Flip</button>
           </div>
           <div class="col text-right">
           <button type="button" class="btn next myFloat_Right" onclick="LoadNext()">Nächste</button>
@@ -60,7 +60,7 @@ function getCookie(name) {
   }
   return null;
 }
-function eraseCookie(name) {   
+function eraseCookie(name) {
   document.cookie = name+'=; Max-Age=-99999999;';  
 }
 
@@ -175,10 +175,12 @@ function render_card(card_nr) {
     </p>
     `;
     flip_btn.disabled = false;
+    flip_btn.style.display = "";
   }
   else  {
     cc.innerHTML = `<p class="bold" align="center" style="padding-top: 1rem; style="margin-bottom: 1rem; visibility: hidden;"> \n</p>`;
     flip_btn.disabled = true;
+    flip_btn.style.display = "none";
   }
 
   cc.innerHTML += `
