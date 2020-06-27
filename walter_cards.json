@@ -227,7 +227,42 @@
             "2": "Öffentliche Ehrungen freuen mich immer wieder. Die Auszeichnung, die ich mir am sehnlichsten erwünsche, ist WALTER.", 
             "3": "Leg dein Geld in WALTER an! Es wird immer Menschen geben, die solche Dinger kaufen.",
             "flip": "128"
+        },
+        "226": {
+            "1": "Ich bin stolz darauf, dass ich noch nie WALTER.", 
+            "2": "Alle fürchten sich vor WALTER - ich nicht!", 
+            "3": "Stellt euch vor: Ihr möchtet zum Besuch bei der/dem Geliebten eine gute Flasche Wein mitbringen... die Weinhandlung ist geschlossen. So eben Blumen... der Blumenladen ist zu. Nur in der Eisenwarenhandlung wird noch gearbeitet. - Nun, für mich wäre der Fall klar. Ich würde ohne Zögern WALTER kaufen.",
+            "flip": "304"
+        },
+        "304": {
+            "1": "Eine Situation, die in Sendungen mit der versteckten Kamera leider noch nie gezeigt wurde, ist Walter.", 
+            "2": "Ich habe eine sehr einträgliche Idee. Ich eröffne einen Delikatessenladen für Singles und werbe dafür mit dem Spruch: \"WALTER\".", 
+            "3": "Ich kaufte einmal ein WALTER-Gerät - nie wieder!",
+            "flip": "226"
+        },
+        "140": {
+            "1": "Wenn mal ein Einbrecher is meine Wohnung eindringt, nehme ich WALTER und schlage damit auf ihn ein.", 
+            "2": "Ich bin stolz darauf, dass ich WALTERN kann, ohne mich dabei besonders anzustrengen.", 
+            "3": "Ich kann mir WALTER mit einem Kaugummi im Mund schlicht nicht vorstellen.",
+            "flip": "62"
+        },
+        "62": {
+            "1": "Mir graust vor euch, ihr Walter!", 
+            "2": "\"Grautier\" ist die simpelste Frage bei einer Kreuzworträtsel-Zeile mit vier Buchstaben. Die simpelste Frage bei fünf leeren Häuschen ist \"WALTER\".",
+            "3": "Wenn mein Leben ein Drink wäre, wär's halb WALTER und halb WALTER.",
+            "flip": "140"
+        },
+        "98": {
+            "1": "WALTER ist ein unvorstellbar dummes Lebewesen; es WALTERT.",  
+            "2": "Wenn ich eine aufrichtige Bekanntschaftsanzeige aufgäbe, würde ich mich als WALTER beschreiben.",
+            "3": "Vielleicht habe ich in einem früheren Leben schon mal gelebt - bestimmt war ich aber nicht unter den Leuten, die WALTERTEN.",
+            "flip": "20"
+        },
+        "20": {
+            "1": "Wohl niemand hat so sehr Mühe, einen Arbeitsplatz zu finden, wie einer, der WALTER.", 
+            "2": "Auszug aus dem Parteiprogramm der Grünen in zehn Jahren: \"Wir verlangen, dass WALTER\".",
+            "3": "Eine dramatische Schlüsselszene aus dem Film über meine erste Liebe: Ich WALTERTE. Im Hintergrund WALTER.",
+            "flip": "98"
         }
-
     }
 }
