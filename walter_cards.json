@@ -263,6 +263,30 @@
             "2": "Auszug aus dem Parteiprogramm der Grünen in zehn Jahren: \"Wir verlangen, dass WALTER\".",
             "3": "Eine dramatische Schlüsselszene aus dem Film über meine erste Liebe: Ich WALTERTE. Im Hintergrund WALTER.",
             "flip": "98"
+        },
+        "301": {
+            "1": "Im Bummelzug nach Burgdorf sitze ich Madonna gegenüber. Ich WALTERE.",  
+            "2": "In der neuesten Ausgabe (F) des \"Penthouse\" (M) der \"Brigitte\" steht ein interessanter Artikel über WALTER.",
+            "3": "Die Gentechnologie macht beängstigende Fortschritte. Aber niemals wird es möglich sein, WALTER künstlich zu schaffen.",
+            "flip": "223"
+        },
+        "223": {
+            "1": "Wenn du mich im Museum suchst, findest du mich bei WALTER.", 
+            "2": "Eine schreckliche Vorstellung: Ich komme nachts totmüde nach Hause, und auf meinem Bett liegt WALTER.",
+            "3": "Statt des üblichen \"Vor Gebrauch schütteln\" müsste man mir ein Etikett umhängen: \"Vor Gebrauch WALTERN!\"",
+            "flip": "301"
+        },
+        "174": {
+            "1": "Als meine Eltern zum letzten Mal sauer auf mich waren, ging's um WALTER.",  
+            "2": "Mit meinem Flair für klare Handzeichen kann ich auch als Börsenmakler an der Wall Street arbeiten: Zeige ich dort mit dem kleinen Finger auf einen Kollegen, so will ich damit sagen, dass dieser WALTERE.",
+            "3": "Ein guter Einstieg in ein persönliches Gespräch ist die Frage: \"Träumst du auch oft von WALTER?\"",
+            "flip": "252"
+        },
+        "252": {
+            "1": "Was ich neben all den Ballonen und Hütten in den Tischbomben zu Silvester immer vermisst habe, war ein(e) WALTER.", 
+            "2": "Wie schon Goethe saget: Liebe ohne Eifersucht ist WALTER.",
+            "3": "Es gibt da ein geschichtliches Ereignis, das ich gerne mit Leib und Seele miterlebt hätte: WALTER.",
+            "flip": "174"
         }
     }
 }
