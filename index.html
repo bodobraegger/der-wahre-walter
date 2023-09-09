@@ -113,6 +113,7 @@ function ShuffleCards() {
   for(var k in cards) card_nrs.push(k);
   shuffle(card_nrs);
   viewed_nrs = [];
+  prev_nr = -1;
   current_nr = -1;
   setHistoryCookie();
 }
