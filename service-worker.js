@@ -1,4 +1,5 @@
-const GHPATH = 'https://broesmel.github.io/der-wahre-walter/';
+const pageroot = `der-wahre-walter`;
+const GHPATH = `https://broesmel.github.io/${pageroot}`;
 // Change to a different app prefix name
 const APP_PREFIX = 'the_true_';
 const VERSION = 'version_01_1';

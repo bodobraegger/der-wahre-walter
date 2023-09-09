@@ -51,11 +51,13 @@
 </html>
 
 <script>
+  const pageroot = `der-wahre-walter`;
+  const GHPATH = `https://broesmel.github.io/${pageroot}`;
   // PWA
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register(
-      '/service-worker.js', {
-        scope: '/'
+      `${pageroot}/service-worker.js`, {
+        scope: `${pageroot}/`
       }
     )
   }
