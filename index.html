@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./bootstrappy_slim.css" />
   <link rel="canonical" href="https://broesmel.github.io/der-wahre-walter/" />
+  <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
   <link rel="manifest" href="der-wahre-walter/site.webmanifest">
   <meta name="theme-color" content="#ffffff" />
   <link rel="shortcut icon" href="public/favicon.ico" type="image/x-icon">
@@ -55,8 +56,8 @@
   // PWA
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register(
-      `${pageroot}/service-worker.js`, {
-        scope: `${pageroot}/`
+      `./service-worker.js`, {
+        scope: `./`
       }
     )
   }
