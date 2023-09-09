@@ -3,7 +3,7 @@
     "short_name": "true-walt",
     "scope": "der-wahre-walter/",
     "description": "An online port of Der Wahre Walter",
-    "start_url": "der-wahre-walter/",
+    "start_url": ".",
     "icons": [
      {
       "src": "public/apple-touch-icon.png",
