@@ -1,7 +1,7 @@
 {
     "name": "Der Wahre Walter",
     "short_name": "true-walt",
-    "scope": "/",
+    "scope": "/der-wahre-walter/",
     "start_url": ".",
     "icons": [
      {
