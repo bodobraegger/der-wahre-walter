@@ -56,7 +56,7 @@
   // PWA
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register(
-      `/service-worker.js`, {
+      `${pageroot}/service-worker.js`, {
         scope: `/`
       }
     )
