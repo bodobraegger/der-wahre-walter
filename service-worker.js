@@ -10,6 +10,7 @@ const URLS = [
   `${GHPATH}/index.html`,
   `${GHPATH}/walter_cards.json`,
   `${GHPATH}/site.webmanifest`,
+  `${GHPATH}/styles.css`,
   `${GHPATH}/public/favicon.ico`,
   `${GHPATH}/public/apple-touch-icon.png`,
   // add more paths if you need

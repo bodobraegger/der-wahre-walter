@@ -3,7 +3,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Der Wahre Walter</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./bootstrappy_slim.css" />
+  <link rel="stylesheet" href="./styles.css" />
   <link rel="canonical" href="https://broesmel.github.io/der-wahre-walter/" />
   <link rel="manifest" href="./site.webmanifest">
   <meta name="theme-color" content="#ffffff" />
@@ -28,14 +28,20 @@
           <div class="card-text" id="current_card"></div>
 
           <div class="row" style="padding-top:16px">
-            <div class="col text-left">
-              <button type="button" class="btn prev" onclick = "LoadPrev()"> 🠐 </button>
+            <div class="col">
+              <button type="button" class="btn prev" onclick = "LoadPrev()">
+                <code> <-prev </code>
+              </button>
             </div>
             <div class="col text-center">
-              <button type="button" class="btn flip btn-light" onclick ="flip_card()" disabled style="display:none"> ⭞flip⭜ </button> <!-- ⟳ -->
+              <button type="button" class="btn flip btn-light" onclick ="flip_card()" disabled style="display:none">
+                <code> ⭞flip⭜ </code>
+              </button> <!-- ⟳ -->
             </div>
-            <div class="col text-right">
-              <button type="button" class="btn next float-right" onclick="LoadNext()"> 🠒 </button>
+            <div class="col">
+              <button type="button" class="btn next float-right" onclick="LoadNext()">
+                <code> next-> </code>
+              </button>
             </div>
           </div>
           </div>
@@ -257,59 +263,3 @@ function shuffle(a) {
 }
 </script>
 
-
-
-
-
-<style>
-  body {
-    font-family: serif;
-  }
-  
-.walter {
-  background-color: #111;
-  color: #FFF;
-  text-transform: uppercase;
-}
-.card_nr {
-  font-size: 8px;
-  margin-right: -2px;
-}
-
-.float-right {
-  float: right;
-}
-.bold {
-  font-weight: bold;
-
-}
-
-ol {
-  margin-left: -19px;
-}
-
-li {
-  margin-bottom: 8px;
-}
-
-.container {
-  max-width: 612px;
-}
-
-.card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  word-wrap: break-word;
-  background-color: #fff;
-  background-clip: border-box;
-  border: 2px solid rgba(0, 0, 0, 0.125);
-  border-radius: 12px;
-}
-.card-body {
-  flex: 1 1 auto;
-  padding: 16px;
-}
-
-</style>
