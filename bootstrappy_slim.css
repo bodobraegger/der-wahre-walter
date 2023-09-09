@@ -88,29 +88,20 @@
     margin-left: auto;
   }
   
-  @media (min-width: var(--breakpoint-sm)) {
+
+  
+  @media (min-width: 500px) {
     .container {
       max-width: calc(var(--breakpoint-sm) - 100px);
     }
   }
   
-  @media (min-width: var(--breakpoint-md)) {
+  @media (min-width: 768px) {
     .container {
-      max-width: calc(var(--breakpoint-md) - 100px);
+      max-width: calc(var(--breakpoint-sm) + 30px);
     }
   }
   
-  @media (min-width: var(--breakpoint-lg)) {
-    .container {
-      max-width: calc(var(--breakpoint-lg) - 100px);
-    }
-  }
-  
-  @media (min-width: var(--breakpoint-xl)) {
-    .container {
-      max-width: calc(var(--breakpoint-xl) - 100px);
-    }
-  }
   .row {
     display: flex;
     flex-wrap: wrap;
