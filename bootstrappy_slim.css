@@ -88,20 +88,6 @@
     margin-left: auto;
   }
   
-
-  
-  @media (min-width: 500px) {
-    .container {
-      max-width: calc(var(--breakpoint-sm) - 100px);
-    }
-  }
-  
-  @media (min-width: 768px) {
-    .container {
-      max-width: calc(var(--breakpoint-sm) + 30px);
-    }
-  }
-  
   .row {
     display: flex;
     flex-wrap: wrap;
