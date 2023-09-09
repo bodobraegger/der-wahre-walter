@@ -1,15 +1,25 @@
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <head>
-
-<link rel="stylesheet" href="./bootstrappy_slim.css">
-
+  <link rel="stylesheet" href="./bootstrappy_slim.css" />
+  <link rel="canonical" href="https://yourname.github.io/your-project-name/" />
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="shortcut icon" href="public/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="public/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="public/apple-touch-icon.png">
+  <link rel="android-chrome-192x192" type="image/png" sizes="192x192" href="public/android-chrome-192x192.png">
+  <link rel="android-chrome-512x512" type="image/png" sizes="512x512" href="public/android-chrome-512x512.png">
+  <link rel="favicon-16x16" type="image/png" sizes="16x16" href="public/favicon-16x16.png">
+  <link rel="favicon-32x32" type="image/png" sizes="16x16" href="public/favicon-32x32.png">
+  <meta name="pwa-capable" content="yes">
 </head>
 <body>
 <!-- 
 <p class="bold" id="spruch"> ich bin der wahre walter. </p> hehe
 <button onclick="we_want_change()"> change something </button>
 --> 
+
 <div class="container">
   <div class="row">
     <div class="col">
@@ -29,8 +39,8 @@
           <button type="button" class="btn next myFloat_Right" onclick="LoadNext()">Nächste</button>
           </div>
           </div>
+          </div>
         </div>
-      </div>
       </div>
     </div>
   </div>
@@ -38,6 +48,16 @@
 </body>
 </html>
 
+<script>
+  // PWA
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register(
+      '/service-worker.js', {
+        scope: '/'
+      }
+    )
+  }
+</script>
 
 <script>
 // helper scripts for cookies
@@ -65,8 +85,6 @@ function eraseCookie(name) {
 }
 
 </script>
-
-
 
 
 <script charset="utf-8">
