@@ -1,7 +1,7 @@
 const GHPATH = `.`;
 // Change to a different app prefix name
 const APP_PREFIX = 'the_true_';
-const VERSION = `version_00_4`;
+const VERSION = `version_01`;
 
 // The files to make available for offline use. make sure to add 
 // others to this list
