@@ -1,4 +1,4 @@
-const GHPATH = `der-wahre-walter`;
+const GHPATH = `./der-wahre-walter`;
 // Change to a different app prefix name
 const APP_PREFIX = 'the_true_';
 const VERSION = 'version_00';
@@ -9,7 +9,6 @@ const URLS = [
   `${GHPATH}/`,
   `${GHPATH}/index.html`,
   `${GHPATH}/walter_cards.json`,
-  `${GHPATH}/bootstrappy_slim.css`,
   `${GHPATH}/public/`,
   // add more paths if you need
   // `${GHPATH}/js/app.js`
