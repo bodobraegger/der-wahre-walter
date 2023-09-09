@@ -30,14 +30,28 @@ self.addEventListener('fetch', function (e) {
   )
 })
 
-self.addEventListener('install', function (e) {
-  e.waitUntil(
-    caches.open(CACHE_NAME).then(function (cache) {
-      console.log('Installing cache : ' + CACHE_NAME);
-      return cache.addAll(URLS)
-    })
-  )
-})
+self.addEventListener('install', e => {
+  e.waitUntil(caches.open(CACHE_NAME).then(async (cache) => {
+    let ok;
+    console.log('ServiceWorker: Caching files:', URLS.length, URLS);
+    try {
+      ok = await cache.addAll(URLS);
+    } catch (err) {
+      console.error('service worker failed: cache.addAll');
+      for (let i of URLS) {
+        try {
+          ok = await cache.add(i);
+        } catch (err) {
+          console.warn('service worker failed: cache.add',i);
+        }
+      }
+    }
+
+    return ok;
+  }));
+
+  console.log('ServiceWorker installed');
+});
 
 self.addEventListener('activate', function (e) {
   e.waitUntil(
