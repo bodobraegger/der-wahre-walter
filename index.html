@@ -54,7 +54,6 @@
 </html>
 
 <script>
-  const pageroot = `der-wahre-walter`;
   // PWA
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register(
@@ -108,17 +107,22 @@ prev_nr = -1;
 current_nr = -1;
 card_nrs = [];
 
+function ShuffleCards() {
+  // shuffle the card_nrs and reset the viewed_nrs, save this state
+  card_nrs = [];
+  for(var k in cards) card_nrs.push(k);
+  shuffle(card_nrs);
+  viewed_nrs = [];
+  current_nr = -1;
+  setHistoryCookie();
+}
+
 // initial shuffle of the cards or loading of the order in the cookie
 function LoadOrShuffle() {
   hist = getCookie("history");
   if(hist == null) {
-    // no cookie exists, so shuffle the card_nrs and reset the viewed_nrs, save this state
-    card_nrs = [];
-    for(var k in cards) card_nrs.push(k);
-    shuffle(card_nrs);
-    viewed_nrs = [];
-    current_nr = -1;
-    setHistoryCookie();
+    // no cookie exists, so 
+    ShuffleCards()
   }
   else {
     hist = JSON.parse(hist);
@@ -170,7 +174,8 @@ function LoadNext() {
   prev_nr = current_nr;
 
   if(card_nrs.length <= 0) {
-    alert("Der Fichen-Stapel ist leer. Mischt ihn erneut und wählt die Aussagen die ihr noch nicht behandelt habt.");
+    alert("Der Fichen-Stapel ist leer. Er wurde erneut gemischt. Ihr könnt weiterspielen. Wählt die Aussagen die ihr noch nicht behandelt habt.");
+    ShuffleCards();
     return;
   }
   if(current_nr != -1) viewed_nrs.push(current_nr);
