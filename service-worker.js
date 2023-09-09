@@ -1,8 +1,7 @@
-const pageroot = `der-wahre-walter`;
-const GHPATH = `https://broesmel.github.io/${pageroot}`;
+const GHPATH = `der-wahre-walter`;
 // Change to a different app prefix name
 const APP_PREFIX = 'the_true_';
-const VERSION = 'version_01_1';
+const VERSION = 'version_00';
 
 // The files to make available for offline use. make sure to add 
 // others to this list

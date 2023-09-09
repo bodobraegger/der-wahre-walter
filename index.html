@@ -4,8 +4,8 @@
   <title>Der Wahre Walter</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./bootstrappy_slim.css" />
-  <link rel="canonical" href="https://yourname.github.io/your-project-name/" />
-  <link rel="manifest" href="site.webmanifest">
+  <link rel="canonical" href="https://broesmel.github.io/der-wahre-walter/" />
+  <link rel="manifest" href="der-wahre-walter/site.webmanifest">
   <meta name="theme-color" content="#ffffff" />
   <link rel="shortcut icon" href="public/favicon.ico" type="image/x-icon">
   <link rel="icon" href="public/favicon.ico" type="image/x-icon">
@@ -52,12 +52,11 @@
 
 <script>
   const pageroot = `der-wahre-walter`;
-  const GHPATH = `https://broesmel.github.io/${pageroot}`;
   // PWA
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register(
       `${pageroot}/service-worker.js`, {
-        scope: `/`
+        scope: `${pageroot}/`
       }
     )
   }
