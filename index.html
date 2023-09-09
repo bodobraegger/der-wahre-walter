@@ -22,24 +22,21 @@
 <button onclick="we_want_change()"> change something </button>
 --> 
 
-<div class="container">
-  <div class="row">
-    <div class="col">
-    <p></p>
-      <div class="text-center">
+<div class="container" style="padding: 32px;">
       <div class="card text-left">
-        <div class="card-body"  style="padding-top:0rem;">
+        <div class="card-body">
           <div class="card-text" id="current_card"></div>
-          <div class="row" style="padding-top:3rem">
-          <div class="col">
-            <button type="button" class="btn prev" onclick = "LoadPrev()">Vorherige</button>
-          </div>
-          <div class="col text-center">
-            <button type="button" class="btn flip btn-light" onclick ="flip_card()" disabled style="display:none">Flip</button>
-          </div>
-          <div class="col text-right">
-          <button type="button" class="btn next myFloat_Right" onclick="LoadNext()">Nächste</button>
-          </div>
+
+          <div class="row" style="padding-top:16px">
+            <div class="col text-left">
+              <button type="button" class="btn prev" onclick = "LoadPrev()"> 🠐 </button>
+            </div>
+            <div class="col text-center">
+              <button type="button" class="btn flip btn-light" onclick ="flip_card()" disabled style="display:none"> ⭞flip⭜ </button> <!-- ⟳ -->
+            </div>
+            <div class="col text-right">
+              <button type="button" class="btn next float-right" onclick="LoadNext()"> 🠒 </button>
+            </div>
           </div>
           </div>
         </div>
@@ -191,7 +188,7 @@ function render_card(card_nr) {
   
 
   if ("gender" in cards[card_nr]) {
-    cc.innerHTML = `<p class="bold text-center" style="margin-bottom: 1rem;">
+    cc.innerHTML = `<p class="bold text-center" style="margin-bottom: 16px;">
       ${cards[card_nr]["gender"]}\n
     </p>
     `;
@@ -199,13 +196,13 @@ function render_card(card_nr) {
     flip_btn.style.display = "";
   }
   else  {
-    cc.innerHTML = `<p class="bold" align="center" style="padding-top: 1rem; style="margin-bottom: 1rem; visibility: hidden;"> \n</p>`;
+    cc.innerHTML = `<p class="bold" align="center" style="padding-top: 16px; style="margin-bottom: 16px; visibility: hidden;"> \n</p>`;
     flip_btn.disabled = true;
     flip_btn.style.display = "none";
   }
 
   cc.innerHTML += `
-  <div class="card_nr text-right">${card_nr}</div>
+  <div class="card_nr text-right float-right">${card_nr}</div>
   <ol>
     <li> ${spanify_walter(cards[card_nr][1])} </li>
     <li> ${spanify_walter(cards[card_nr][2])} </li>
@@ -265,26 +262,50 @@ function shuffle(a) {
 
 
 <style>
-
+  body {
+    font-family: serif;
+  }
+  
 .walter {
   background-color: #111;
   color: #FFF;
   text-transform: uppercase;
 }
 .card_nr {
-  font-size: 0.5em;
-  margin-right: -2rem;
+  font-size: 8px;
+  margin-right: -2px;
 }
 
-body {
-  font-size: 3em;
-  font-family: serif;
-}
-.myFloat_Right {
+.float-right {
   float: right;
 }
 .bold {
   font-weight: bold;
 
 }
+
+ol {
+  margin-left: -19px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 2px solid rgba(0, 0, 0, 0.125);
+  border-radius: 12px;
+}
+.card-body {
+  flex: 1 1 auto;
+  padding: 16px;
+}
+
 </style>

@@ -1,7 +1,7 @@
-const GHPATH = `https//broesmel.github.io/der-wahre-walter`;
+const GHPATH = `.`;
 // Change to a different app prefix name
 const APP_PREFIX = 'the_true_';
-const VERSION = `version_00`;
+const VERSION = `version_00_2`;
 
 // The files to make available for offline use. make sure to add 
 // others to this list
