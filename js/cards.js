@@ -1,7 +1,7 @@
 // loading in the cards
 // not currently supported in browser:
-// import data from '../data/walter_cards.json' assert { type: 'json' };
-const data = await fetch('../data/walter_cards.json')
+// import data from 'data/walter_cards.json' assert { type: 'json' };
+const data = await fetch('data/walter_cards.json')
     .then((response)=>response.json());
 console.log(data)
 
