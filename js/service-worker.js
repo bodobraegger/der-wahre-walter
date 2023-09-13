@@ -1,11 +1,9 @@
 const GHPATH = `.`;
-// Change to a different app prefix name
-const APP_PREFIX = 'the_true_';
-const VERSION = `version_02`;
 
-// The files to make available for offline use. make sure to add 
-// others to this list
-const URLS = [
+const VERSION = `v1`;
+const CACHE_NAME = `the-true-walt-${VERSION}`
+
+const APP_STATIC_RESOURCES = [
   `${GHPATH}/`,
   `${GHPATH}/site.webmanifest`,
   `${GHPATH}/index.html`,
@@ -19,31 +17,18 @@ const URLS = [
   // `${GHPATH}/js/app.js`
 ]
 
-const CACHE_NAME = APP_PREFIX + VERSION
-self.addEventListener('fetch', function (e) {
-  console.log('Fetch request : ' + e.request.url);
-  e.respondWith(
-    caches.match(e.request).then(function (request) {
-      if (request) {
-        console.log('Responding with cache : ' + e.request.url);
-        return request
-      } else {
-        console.log('File is not cached, fetching : ' + e.request.url);
-        return fetch(e.request)
-      }
-    })
-  )
-})
 
+// On install, cache the static resources
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE_NAME).then(async (cache) => {
     let ok;
-    console.log('ServiceWorker: Caching files:', URLS.length, URLS);
+    console.log('ServiceWorker: Caching files:', 
+      APP_STATIC_RESOURCES.length, APP_STATIC_RESOURCES);
     try {
-      ok = await cache.addAll(URLS);
+      ok = await cache.addAll(APP_STATIC_RESOURCES);
     } catch (err) {
       console.error('service worker failed: cache.addAll');
-      for (let i of URLS) {
+      for (let i of APP_STATIC_RESOURCES) {
         try {
           ok = await cache.add(i);
         } catch (err) {
@@ -58,6 +43,7 @@ self.addEventListener('install', e => {
   console.log('ServiceWorker installed');
 });
 
+// Delete old caches on activate
 self.addEventListener('activate', function (e) {
   e.waitUntil(
     caches.keys().then(function (keyList) {
@@ -73,4 +59,21 @@ self.addEventListener('activate', function (e) {
       }))
     })
   )
-})
+});
+
+// On fetch, intercept server requests
+// and respond with cached responses instead of going to network
+self.addEventListener('fetch', function (e) {
+  console.log('Fetch request : ' + e.request.url);
+  e.respondWith(
+    caches.match(e.request).then(function (request) {
+      if (request) {
+        console.log('Responding with cache : ' + e.request.url);
+        return request
+      } else {
+        console.log('File is not cached, fetching : ' + e.request.url);
+        return fetch(e.request)
+      }
+    })
+  )
+});
