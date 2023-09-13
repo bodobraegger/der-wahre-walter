@@ -1,16 +1,18 @@
 const GHPATH = `.`;
 // Change to a different app prefix name
 const APP_PREFIX = 'the_true_';
-const VERSION = `version_01`;
+const VERSION = `version_02`;
 
 // The files to make available for offline use. make sure to add 
 // others to this list
 const URLS = [
   `${GHPATH}/`,
-  `${GHPATH}/index.html`,
-  `${GHPATH}/walter_cards.json`,
   `${GHPATH}/site.webmanifest`,
+  `${GHPATH}/index.html`,
   `${GHPATH}/styles.css`,
+  `${GHPATH}/data/walter_cards.json`,
+  `${GHPATH}/js/cards.js`,
+  `${GHPATH}/js/cookies.js`,
   `${GHPATH}/public/favicon.ico`,
   `${GHPATH}/public/apple-touch-icon.png`,
   // add more paths if you need
