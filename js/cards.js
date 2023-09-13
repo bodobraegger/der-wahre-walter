@@ -3,7 +3,6 @@
 // import data from 'data/walter_cards.json' assert { type: 'json' };
 const data = await fetch('data/walter_cards.json')
     .then((response)=>response.json());
-console.log(data)
 
 var cards = data["cards"];
 
@@ -36,7 +35,7 @@ function LoadOrShuffle() {
         current_nr = hist["current_nr"];
         card_nrs = hist["card_nrs"];
     }
-    if (current_nr == -1) LoadNext();
+    if (current_nr == -1) nextCard();
     else render_card(current_nr);
 }
 
@@ -53,7 +52,7 @@ function setHistoryCookie() {
 }
 
 
-function LoadPrev(card) {
+function prevCard(card) {
     prev_nr = current_nr;
 
     if (viewed_nrs.length <= 0) {
@@ -69,7 +68,7 @@ function LoadPrev(card) {
 
 }
 
-function LoadNext() {
+function nextCard() {
     prev_nr = current_nr;
 
     if (card_nrs.length <= 0) {
@@ -90,7 +89,7 @@ function LoadNext() {
 
 function render_card(card_nr) {
     var cc = document.getElementById("current_card");
-    var flip_btn = document.getElementsByClassName("flip")[0];
+    var flip_btn = document.getElementById("btn-flip");
 
 
     if ("gender" in cards[card_nr]) {
@@ -120,7 +119,7 @@ function render_card(card_nr) {
 
 
 // render the flipside of a gendered card
-function flip_card() {
+function flipCard() {
     // not a gendered card, abort
     if (current_nr == -1 || !("gender" in cards[current_nr])) return;
 
@@ -168,16 +167,20 @@ function shuffle(a) {
 
 // Change cards on arrow keys
 window.onkeydown = function (e) {
-    switch (e.keyCode) {
-        case 38: // Arrow up
-        case 37: // Arrow left 
+    switch (e.key) {
+        case "ArrowUp":
+        case "ArrowLeft": 
             e.preventDefault();
-            LoadPrev();
+            prevCard();
             break;
-        case 40: // Arrow down
-        case 39: // Arrow right 
+        case "ArrowDown":
+        case "ArrowRight": 
             e.preventDefault();
-            LoadNext()
+            nextCard()
             break;
     }
 };
+
+document.getElementById('btn-prev').onclick = function () { prevCard(); }
+document.getElementById('btn-flip').onclick = function () { flipCard(); }
+document.getElementById('btn-next').onclick = function () { nextCard(); }

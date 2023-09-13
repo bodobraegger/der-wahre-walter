@@ -1,7 +1,8 @@
 const GHPATH = `.`;
 
 const VERSION = `v1`;
-const CACHE_NAME = `the-true-walt-${VERSION}`
+const APP_PREFIX = `the-true-walt`
+const CACHE_NAME = `${APP_PREFIX}-${VERSION}`
 
 const APP_STATIC_RESOURCES = [
   `${GHPATH}/`,

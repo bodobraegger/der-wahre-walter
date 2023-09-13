@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Der Wahre Walter</title>
@@ -15,55 +16,69 @@
   <link rel="favicon-16x16" type="image/png" sizes="16x16" href="public/favicon-16x16.png">
   <link rel="favicon-32x32" type="image/png" sizes="16x16" href="public/favicon-32x32.png">
   <meta name="pwa-capable" content="yes">
+
+  <script type="application/javascript">
+    // PWA
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker
+        .register("./service-worker.js")
+        .then((registration) => {
+          registration.addEventListener("updatefound", () => {
+            // If updatefound is fired, it means that there's
+            // a new service worker being installed.
+            const installingWorker = registration.installing;
+            console.log(
+              "A new service worker is being installed:",
+              installingWorker,
+            );
+
+            // You can listen for changes to the installing service worker's
+            // state via installingWorker.onstatechange
+          });
+        })
+        .catch((error) => {
+          console.error(`Service worker registration failed: ${error}`);
+        });
+    } else {
+      console.error("Service workers are not supported.");
+    }
+  </script>
+  <script type="text/javascript" src="./js/cookies.js"></script>
+  <script type="module" src="./js/cards.js"></script>
 </head>
+
 <body>
-<!-- 
+  <!-- 
 <p class="bold" id="spruch"> ich bin der wahre walter. </p> hehe
 <button onclick="we_want_change()"> change something </button>
---> 
+-->
 
-<div class="container" style="padding: 32px;">
-      <div class="card text-left">
-        <div class="card-body">
-          <div class="card-text" id="current_card"></div>
+  <div class="container" style="padding: 32px;">
+    <div class="card text-left">
+      <div class="card-body">
+        <div class="card-text" id="current_card"></div>
 
-          <div class="row" style="padding-top:16px">
-            <div class="col">
-              <button type="button" class="btn prev" onclick = "LoadPrev()">
-                <code> <-prev </code>
-              </button>
-            </div>
-            <div class="col text-center">
-              <button type="button" class="btn flip btn-light" onclick ="flip_card()" disabled style="display:none">
-                <code> ⭞flip⭜ </code>
-              </button> <!-- ⟳ -->
-            </div>
-            <div class="col">
-              <button type="button" class="btn next float-right" onclick="LoadNext()">
-                <code> next-> </code>
-              </button>
-            </div>
+        <div class="row" style="padding-top:16px">
+          <div class="col">
+            <button type="button" id="btn-prev" class="btn prev">
+              <code> <-prev </code>
+            </button>
           </div>
+          <div class="col text-center">
+            <button type="button" id="btn-flip" class="btn flip btn-light" disabled style="display:none">
+              <code> ⭞flip⭜ </code>
+            </button> <!-- ⟳ -->
+          </div>
+          <div class="col">
+            <button type="button" id="btn-next" class="btn next float-right">
+              <code> next-> </code>
+            </button>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+
 </body>
+
 </html>
-
-<script type="application/javascript; charset=UTF-8">
-  // PWA
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register(
-      `./js/service-worker.js`, {
-        scope: `./`
-      }
-    )
-  }
-</script>
-
-<script type="text/javascript" src="./js/cookies.js"></script>
-<script type="module" src="./js/cards.js"></script>
-
