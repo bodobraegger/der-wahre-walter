@@ -1,6 +1,6 @@
 const GHPATH = `.`;
 
-const VERSION = `v1.2`;
+const VERSION = `v1.3`;
 const APP_PREFIX = `the-true-walt`
 const CACHE_NAME = `${APP_PREFIX}-${VERSION}`
 
