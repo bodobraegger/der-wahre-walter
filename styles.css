@@ -7,6 +7,12 @@ body {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+  @media (max-width: 768px) {
+    margin-top: 4px;
+  }
 }
 
 .walter {
@@ -37,6 +43,8 @@ li {
 .row {
   display: flex;
   flex-wrap: wrap;
+  margin-top: auto;
+  padding-top: 16px;
 }
 
 .col {
@@ -64,6 +72,10 @@ li {
 .card-body {
   flex: 1 1 auto;
   padding: 12px;
+  min-height: 212px;
+}
+.card-text {
+  margin: 32px 4px;
 }
 
 /* BUTTONS */

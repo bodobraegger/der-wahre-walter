@@ -90,23 +90,20 @@ function nextCard() {
 function render_card(card_nr) {
     var cc = document.getElementById("current_card");
     var flip_btn = document.getElementById("btn-flip");
-
+    var genderAbb = "&nbsp;";
+    var content="";
+    flip_btn.style.display = "none";
 
     if ("gender" in cards[card_nr]) {
-        cc.innerHTML = `<p class="bold text-center" style="margin-bottom: 16px;">
-      ${cards[card_nr]["gender"]}\n
-    </p>
-    `;
-        flip_btn.disabled = false;
+        genderAbb = cards[card_nr]["gender"];
         flip_btn.style.display = "";
+        content = `<p class="bold text-center">${genderAbb}\n</p>`;
     }
     else {
-        cc.innerHTML = `<p class="bold" align="center" style="padding-top: 16px; style="margin-bottom: 16px; visibility: hidden;"> \n</p>`;
-        flip_btn.disabled = true;
-        flip_btn.style.display = "none";
+        content = "";
     }
 
-    cc.innerHTML += `
+    content += `
   <div class="card_nr text-right float-right">${card_nr}</div>
   <ol>
     <li> ${spanify_walter(cards[card_nr][1])} </li>
@@ -114,6 +111,7 @@ function render_card(card_nr) {
     <li> ${spanify_walter(cards[card_nr][3])} </li>
   </ol>
   `;
+    cc.innerHTML = content;
     setHistoryCookie();
 }
 
