@@ -14,7 +14,7 @@ main {
   margin: 0 auto; /* Centering and top margin */
   gap: 8px; /* Space between the card and the button navigation if in normal flow */
   flex-grow: 1;
-  position: relative; /* Added for absolute positioning of nav */
+  position: relative;
 }
 
 @media (max-width: 768px) {
@@ -23,7 +23,6 @@ main {
   }
 }
 
-/* Card styles, merging old .card and .card-body */
 article.card {
   position: relative; /* For positioning elements like .card_nr */
   box-shadow: #111 0px 0px 4px;
@@ -34,14 +33,14 @@ article.card {
 
 /* Styles for content dynamically injected into article.card by JavaScript */
 article.card .walter {
-  background-color: #111;
+  background-color: #000;
   color: #FFF;
   text-transform: uppercase;
 }
 
 article.card .card_nr {
   font-size: 8px;
-  margin-right: -2px; /* Kept for fine-tuning with float:right */
+  margin-right: -2px;
   float: right;
   text-align: right;
 }
@@ -51,9 +50,8 @@ article.card .bold {
 }
 
 article.card ol {
-  /* margin-left: -19px; */ /* Removed negative margin */
-  padding-left: 20px; /* Use padding for indentation, adjust value as needed */
-  list-style-position: outside; /* Ensures list markers are outside the text flow */
+  padding-left: 20px; 
+  list-style-position: outside;
 }
 
 article.card li {
@@ -62,7 +60,7 @@ article.card li {
 
 nav.button-navigation {
   display: flex;
-  justify-content: space-between; /* Distributes buttons evenly */
+  justify-content: space-between;
   align-items: center;
   background-color: transparent;
   position: absolute;
