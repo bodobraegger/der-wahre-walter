@@ -12,6 +12,7 @@ const APP_STATIC_RESOURCES = [
   `${GHPATH}/data/walter_cards.json`,
   `${GHPATH}/js/cards.js`,
   `${GHPATH}/js/cookies.js`,
+  `${GHPATH}/js/pwa-init.js`, // Added pwa-init.js
   `${GHPATH}/public/favicon.ico`,
   `${GHPATH}/public/apple-touch-icon.png`,
   // add more paths if you need
@@ -21,45 +22,44 @@ const APP_STATIC_RESOURCES = [
 
 // On install, cache the static resources
 self.addEventListener('install', e => {
-  e.waitUntil(caches.open(CACHE_NAME).then(async (cache) => {
-    let ok;
-    console.log('ServiceWorker: Caching files:', 
-      APP_STATIC_RESOURCES.length, APP_STATIC_RESOURCES);
-    try {
-      ok = await cache.addAll(APP_STATIC_RESOURCES);
-    } catch (err) {
-      console.error('service worker failed: cache.addAll');
-      for (let i of APP_STATIC_RESOURCES) {
-        try {
-          ok = await cache.add(i);
-        } catch (err) {
-          console.warn('service worker failed: cache.add',i);
+  e.waitUntil(
+    caches.open(CACHE_NAME).then(async (cache) => {
+      console.log('ServiceWorker: Caching files:', APP_STATIC_RESOURCES.length, APP_STATIC_RESOURCES);
+      try {
+        await cache.addAll(APP_STATIC_RESOURCES);
+      } catch (err) {
+        console.error('ServiceWorker: cache.addAll failed:', err);
+        console.log('ServiceWorker: Caching files individually as a fallback.');
+        for (const resource of APP_STATIC_RESOURCES) {
+          try {
+            await cache.add(resource);
+          } catch (addErr) {
+            console.warn('ServiceWorker: cache.add failed for resource:', resource, addErr);
+          }
         }
       }
-    }
-
-    return ok;
-  }));
-
-  console.log('ServiceWorker installed');
+    }).then(() => {
+      console.log('ServiceWorker installed');
+      return self.skipWaiting(); // Ensure the new service worker activates quickly
+    })
+  );
 });
 
 // Delete old caches on activate
 self.addEventListener('activate', function (e) {
   e.waitUntil(
     caches.keys().then(function (keyList) {
-      var cacheWhitelist = keyList.filter(function (key) {
-        return key.indexOf(APP_PREFIX)
-      })
-      cacheWhitelist.push(CACHE_NAME);
-      return Promise.all(keyList.map(function (key, i) {
-        if (cacheWhitelist.indexOf(key) === -1) {
-          console.log('Deleting cache : ' + keyList[i]);
-          return caches.delete(keyList[i])
+      return Promise.all(keyList.map(function (key) {
+        if (key !== CACHE_NAME && key.startsWith(APP_PREFIX)) { // Check prefix and not current cache
+          console.log('Deleting old cache : ' + key);
+          return caches.delete(key);
         }
-      }))
+      }));
+    }).then(() => {
+      console.log('ServiceWorker activated');
+      return self.clients.claim(); // Ensure new SW takes control of open clients
     })
-  )
+  );
 });
 
 // On fetch, intercept server requests
