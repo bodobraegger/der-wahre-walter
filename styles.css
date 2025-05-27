@@ -1,22 +1,24 @@
 /* Basic body styles */
 body {
   font-family: serif;
-  margin: 0; /* Ensure no default body margin interferes with centering */
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Wrapper for the main content, replacing .container */
-main.content-wrapper {
+main {
   max-width: 420px;
-  padding: 0 16px;
-  margin: 32px auto 0 auto; /* Centering and top margin */
-  display: flex;
-  flex-direction: column;
+  padding: 32px 8px;
+  margin: 0 auto; /* Centering and top margin */
   gap: 8px; /* Space between the card and the button navigation */
+  flex-grow: 1;
 }
 
 @media (max-width: 768px) {
-  main.content-wrapper {
-    margin-top: 4px; /* Reduced top margin on smaller screens */
+  main {
+    padding-top: 8px;
   }
 }
 
@@ -77,8 +79,28 @@ nav.button-navigation {
 }
 
 
+
 /* These classes are assumed to be on the buttons themselves */
 /* Utility classes that might still be used by JS or are general */
 .text-center {
   text-align: center !important;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.8em;
+  padding: 32px;
+}
+@media screen and (max-width: 768px) {
+  footer {
+    padding: 8px;
+  }
+}
+
+footer a {
+  text-decoration-style: dashed;
+}
+
+footer a:hover {
+  text-decoration-style: solid;
 }
