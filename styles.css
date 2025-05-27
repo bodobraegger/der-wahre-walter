@@ -83,7 +83,7 @@ nav.button-navigation {
   border-radius: 6px;
   cursor: pointer;
   height: 100%;
-  border: dashed 1px black;
+  border: dashed 1px;
 }
 .button-navigation button:hover {
   border-style: solid;
