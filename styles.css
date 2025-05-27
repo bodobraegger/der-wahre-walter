@@ -1,114 +1,84 @@
+/* Basic body styles */
 body {
   font-family: serif;
+  margin: 0; /* Ensure no default body margin interferes with centering */
 }
-.container {
+
+/* Wrapper for the main content, replacing .container */
+main.content-wrapper {
   max-width: 420px;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+  padding: 0 16px;
+  margin: 32px auto 0 auto; /* Centering and top margin */
   display: flex;
   flex-direction: column;
-  margin-top: 32px;
-  @media (max-width: 768px) {
-    margin-top: 4px;
+  gap: 8px; /* Space between the card and the button navigation */
+}
+
+@media (max-width: 768px) {
+  main.content-wrapper {
+    margin-top: 4px; /* Reduced top margin on smaller screens */
   }
 }
 
-.walter {
+/* Card styles, merging old .card and .card-body */
+article.card {
+  position: relative; /* For positioning elements like .card_nr */
+  background-color: #f6eee3;
+  border: 1.5px solid rgba(0, 0, 0, 0.125);
+  border-radius: 12px;
+  padding: 12px; /* Inner spacing for card content */
+  min-height: 212px;
+}
+
+/* Styles for content dynamically injected into article.card by JavaScript */
+article.card .walter {
   background-color: #111;
   color: #FFF;
   text-transform: uppercase;
 }
-.card_nr {
+
+article.card .card_nr {
   font-size: 8px;
-  margin-right: -2px;
+  margin-right: -2px; /* Kept for fine-tuning with float:right */
+  float: right;
+  text-align: right;
 }
 
-.float-right {
-  float: right;
-}
-.bold {
+article.card .bold {
   font-weight: bold;
 }
 
-ol {
-  margin-left: -19px;
+article.card ol {
+  /* margin-left: -19px; */ /* Removed negative margin */
+  padding-left: 20px; /* Use padding for indentation, adjust value as needed */
+  list-style-position: outside; /* Ensures list markers are outside the text flow */
 }
 
-li {
+article.card li {
   margin-bottom: 8px;
 }
 
-.row {
+/* Button navigation bar, replacing .row and .col structure */
+nav.button-navigation {
   display: flex;
-  flex-wrap: wrap;
-  margin-top: auto;
-  padding-top: 16px;
+  justify-content: space-between; /* Distributes buttons evenly */
+  align-items: center;
 }
 
-.col {
-  flex-basis: 0;
-  flex-grow: 1;
-  max-width: 100%;
-}
-
-.text-center {
-  text-align: center !important;
-}
-
-
-.card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  word-wrap: break-word;
-  background-color: #fff;
-  background-clip: border-box;
-  border: 2px solid rgba(0, 0, 0, 0.125);
-  border-radius: 12px;
-}
-.card-body {
-  flex: 1 1 auto;
-  padding: 12px;
-  min-height: 212px;
-}
-.card-text {
-  margin: 32px 4px;
-}
-
-/* BUTTONS */
-
-button:focus {
-  outline: 1px dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-}
-
-.btn {
-  display: inline-block;
-  padding: 4px;
-  text-align: center;
-  vertical-align: middle;
+.button-navigation button {
+  padding: 4px 8px; /* Adjusted padding slightly for a more balanced look */
   user-select: none;
   border: 1px solid transparent;
-  line-height: 1.5;
   border-radius: 6px;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-.btn:hover, .btn:focus {
-  text-decoration: none;
-}
-
-.btn:focus, .btn.focus {
-  outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-}
-
-.btn.disabled, .btn:disabled {
-  opacity: 0.65;
-}
-
-.btn:not(:disabled):not(.disabled) {
   cursor: pointer;
+}
+.button-navigation button:hover {
+  filter: invert(0);
+}
+
+
+/* These classes are assumed to be on the buttons themselves */
+/* Utility classes that might still be used by JS or are general */
+.text-center {
+  text-align: center !important;
 }

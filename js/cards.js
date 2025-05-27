@@ -185,7 +185,7 @@ const CardGame = {
         }
 
         content += `
-          <div class="card_nr text-right float-right">${cardNumber}</div>
+          <div class="card_nr">${cardNumber}</div>
           <ol>
             <li> ${this._spanifyWalter(card[1] || "")} </li>
             <li> ${this._spanifyWalter(card[2] || "")} </li>
