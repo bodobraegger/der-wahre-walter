@@ -25,7 +25,6 @@ main {
 /* Card styles, merging old .card and .card-body */
 article.card {
   position: relative; /* For positioning elements like .card_nr */
-  background-color: #f6eee3;
   border: 1.5px solid rgba(0, 0, 0, 0.125);
   border-radius: 12px;
   padding: 12px; /* Inner spacing for card content */
@@ -60,7 +59,6 @@ article.card li {
   margin-bottom: 8px;
 }
 
-/* Button navigation bar, replacing .row and .col structure */
 nav.button-navigation {
   display: flex;
   justify-content: space-between; /* Distributes buttons evenly */
@@ -68,17 +66,15 @@ nav.button-navigation {
 }
 
 .button-navigation button {
-  padding: 4px 8px; /* Adjusted padding slightly for a more balanced look */
+  padding: 4px 8px; 
   user-select: none;
   border: 1px solid transparent;
   border-radius: 6px;
   cursor: pointer;
 }
 .button-navigation button:hover {
-  filter: invert(0);
+  background-color: chartreuse;
 }
-
-
 
 /* These classes are assumed to be on the buttons themselves */
 /* Utility classes that might still be used by JS or are general */
