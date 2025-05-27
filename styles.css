@@ -70,18 +70,23 @@ nav.button-navigation {
   right: 8px;
 }
 
+@media (max-width: 768px) {
+  nav.button-navigation {
+    height: 180px;
+    top: 60%;
+  }
+}
+
 .button-navigation button {
   padding: 4px 8px; 
   user-select: none;
-  border: 1px solid transparent;
   border-radius: 6px;
   cursor: pointer;
-  opacity: 0.6;
   height: 100%;
-  border: dashed 1px;
+  border: dashed 1px black;
 }
 .button-navigation button:hover {
-  opacity: 1;
+  border-style: solid;
 }
 
 /* These classes are assumed to be on the buttons themselves */
