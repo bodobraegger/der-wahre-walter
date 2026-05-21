@@ -58,7 +58,7 @@ article.card li {
   margin-bottom: 8px;
 }
 
-nav.button-navigation {
+.button-navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -68,6 +68,7 @@ nav.button-navigation {
   top: 40%;
   left: 8px;
   right: 8px;
+  touch-action: manipulation;
 }
 
 @media (max-width: 768px) {
